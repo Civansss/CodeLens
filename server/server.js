@@ -21,7 +21,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/notes", noteRoutes);
 app.use("/api/ai", aiRoutes);
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 app.get("/api/health", (req, res) => {
   res.json({
@@ -33,5 +33,5 @@ app.get("/api/health", (req, res) => {
 connectDB();
 
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
