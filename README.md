@@ -1,148 +1,100 @@
-# 🚀 CodeLens
+# 🚀 CodeLens – AI-Powered Programming Companion
 
-![React](https://img.shields.io/badge/React-19-blue)
-![Node.js](https://img.shields.io/badge/Node.js-Express-green)
-![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-green)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4-blue)
-![Gemini](https://img.shields.io/badge/AI-Gemini-purple)
+CodeLens is a full-stack MERN application that helps programmers write, organize and understand programming notes with AI. It provides secure authentication, AI-powered note summarization, an AI Mentor chatbot, and code explanation using Google's Gemini API.
 
----
+🌐 **Live Demo:** https://code-lens-rust.vercel.app
 
-## 📌 Project Highlights
-
-- Secure JWT Authentication
-- AI-powered programming assistant using Google Gemini
-- Create, edit, delete and search programming notes
-- AI-powered note summarization and improvement
-- AI code explanation with complexity analysis
-- AI Mentor chatbot with Markdown support
-- Responsive UI built using React and Tailwind CSS
-
----
-
-An AI-powered programming notes platform that helps developers write, organize, improve, summarize, and understand code using Google's Gemini AI.
+💻 **GitHub Repository:** https://github.com/Civansss/CodeLens
 
 ---
 
 ## ✨ Features
 
-### 📝 Smart Notes
-- Create programming notes
-- Edit notes
-- Delete notes
-- Search notes instantly
-- Markdown support
+- 🔐 Secure JWT Authentication
+- 📝 Create, Update and Delete Programming Notes
+- 🔍 Instant Note Search
+- 🤖 AI Mentor powered by Google Gemini
+- 📄 AI Note Summarizer
+- 💡 Explain Code with AI
+- 📱 Fully Responsive UI
+- ⚡ Toast Notifications
+- 🛡 Protected Routes
+- 🎨 Modern UI using Tailwind CSS
 
-### 🤖 AI Features
-- AI Note Summarizer
-- AI Note Improver
-- AI Code Explainer
-- AI Mentor Chat
+---
 
-### 🔐 Authentication
-- User Signup
-- User Login
-- JWT Authentication
-- Protected Routes
+# 📸 Screenshots
 
-### 💻 Code Explainer
-Paste code in:
-- C++
-- Java
-- Python
-- JavaScript
+## Login
 
-and get:
-- Overview
-- Logic
-- Time Complexity
-- Space Complexity
-- Key Takeaways
+![Login](codelens_screenshots/login.png)
 
-### 💬 AI Mentor
-Ask programming questions about:
-- DSA
-- React
-- JavaScript
-- C++
-- Interview Preparation
-- Web Development
+---
 
-Supports:
+## Signup
 
-- Markdown responses
-- Syntax highlighted code blocks
-- Copy AI responses
-- Conversation history
-- Fixed chat input
-- Auto scrolling
-- New Chat
+![Signup](codelens_screenshots/signup.png)
+
+---
+
+## Dashboard
+
+![Dashboard](codelens_screenshots/dashboard.png)
+
+---
+
+## Notes
+
+![Notes](codelens_screenshots/notes.png)
+
+---
+
+## AI Mentor
+
+![AI Mentor](codelens_screenshots/mentor.png)
+
+---
+
+## Explain Code
+
+![Explain Code](codelens_screenshots/explain.png)
 
 ---
 
 # 🛠 Tech Stack
 
 ### Frontend
-- React
-- Vite
-- Tailwind CSS
+
+- React.js
 - React Router
+- Tailwind CSS
+- React Hot Toast
 - React Markdown
 - Lucide React
-- React Hot Toast
 
 ### Backend
+
 - Node.js
 - Express.js
-- MongoDB Atlas
+
+### Database
+
+- MongoDB
 - Mongoose
-- JWT Authentication
+
+### Authentication
+
+- JWT (JSON Web Tokens)
+- bcrypt.js
 
 ### AI
-- Google Gemini 2.5 Flash API
 
----
+- Google Gemini API
 
-## 🏗 Architecture
+### Deployment
 
-```
-
-React + Vite
-       │
-       ▼
-Express.js API
-       │
-       ▼
-Gemini AI API
-       │
-       ▼
-MongoDB Atlas
-
-```
-
-# 📸 Screenshots
-
-## Dashboard
-
-(Add Screenshot)
-
----
-
-## AI Mentor
-
-(Add Screenshot)
-
----
-
-## Explain Code
-
-(Add Screenshot)
-
----
-
-## Login
-
-(Add Screenshot)
+- Vercel (Frontend)
+- Render (Backend)
 
 ---
 
@@ -154,14 +106,17 @@ CodeLens
 ├── client
 │   ├── src
 │   ├── public
-│   └── ...
+│   └── package.json
 │
 ├── server
 │   ├── controllers
 │   ├── middleware
 │   ├── models
 │   ├── routes
-│   └── ...
+│   ├── config
+│   └── server.js
+│
+├── codelens_screenshots
 │
 └── README.md
 ```
@@ -176,92 +131,93 @@ CodeLens
 git clone https://github.com/Civansss/CodeLens.git
 ```
 
----
-
-## Frontend
-
-```bash
-cd client
-
-npm install
-
-npm run dev
+```
+cd CodeLens
 ```
 
 ---
 
-## Backend
+## Backend Setup
 
-```bash
+```
 cd server
-
 npm install
+```
 
+Create a `.env` file inside the **server** folder.
+
+```
+MONGODB_URI=your_mongodb_uri
+JWT_SECRET=your_secret_key
+GEMINI_API_KEY=your_gemini_api_key
+PORT=8000
+```
+
+Run backend
+
+```
 npm start
 ```
 
 ---
 
-# 🔑 Environment Variables
-
-## Client
-
-Create
+## Frontend Setup
 
 ```
-client/.env
-```
-
-```env
-VITE_API_URL=http://localhost:8000
+cd client
+npm install
+npm run dev
 ```
 
 ---
 
-## Server
+# 🔒 Authentication
 
-Create
-
-```
-server/.env
-```
-
-```env
-PORT=8000
-
-MONGO_URI=YOUR_MONGODB_URI
-
-JWT_SECRET=YOUR_SECRET
-
-GEMINI_API_KEY=YOUR_API_KEY
-```
+- JWT Authentication
+- Password Hashing using bcrypt.js
+- Protected Routes
+- Secure API Access
 
 ---
 
-# 🚀 Deployment
+# 🤖 AI Features
 
-Frontend:
+### AI Mentor
+
+Ask programming-related questions and receive detailed explanations generated using Google Gemini.
+
+### AI Summarizer
+
+Generate concise summaries for programming notes.
+
+### Explain Code
+
+Paste any code snippet and receive an AI-generated explanation.
+
+---
+
+# 🌍 Deployment
+
+Frontend
+
 - Vercel
 
-Backend:
-- Render
+Backend
 
-Database:
-- MongoDB Atlas
+- Render
 
 ---
 
-## 🚀 Future Improvements
+# 🚀 Future Improvements
 
-- ChatGPT-style conversation sidebar
-- Multiple AI conversations
-- AI Flashcards Generator
-- AI Quiz Generator
-- Export Notes as PDF
 - Dark Mode
-- AI Interview Mode
-- Voice Assistant
-- Image to Notes (OCR)
+- AI Flashcards
+- Export Notes as PDF
+- Folder Management
+- Code Syntax Highlighting
+- Markdown Editor
+- Favorite Notes
+- Profile Page
 
 ---
 
@@ -269,10 +225,11 @@ Database:
 
 **Shivansh Srivastava**
 
-B.Tech CSE | NIT Raipur
+GitHub:
+https://github.com/Civansss
 
 ---
 
-# ⭐ If you like this project
+## ⭐ If you like this project
 
-Please consider giving this repository a ⭐ on GitHub.
+Give this repository a **Star ⭐** on GitHub!
